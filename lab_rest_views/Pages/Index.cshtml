@@ -1,19 +1,34 @@
 ﻿@page
-@{
+@using Laboratorio_rest_api;
+@{  
     ViewData["Title"] = "Home page";
+    var mock = new List<Autor>();
+    for (int i = 0; i < 10; i++)
+    {
+        mock.Add(new Autor { PrimeiroNome = $"Autor {i + 1}", UltimoNome="Pereira",AutorId = i + 1 });
+    }
 }
 
 <div class="text-center">
-    <div class="container text-center">
-        @foreach (var item in Model.Items)
-        {
-            <div class="row">
-            @for(int i = 0; i < 4; i++)
-            {
-                <div class="col">
 
-                </div>
-            }         
-            </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>AutorId</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in mock)
+        {
+            <tr scope="row">
+                <td>@(mock.IndexOf(item) + 1)</td>
+                <td>@item.AutorId</td>
+                <td>@item.PrimeiroNome @{+ " " +} @item.UltimoNome</td>
+
+            </tr>
         }
-    </div>
+        </tbody>
+    </table>
+</div>

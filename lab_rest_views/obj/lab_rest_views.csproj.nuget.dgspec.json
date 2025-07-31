@@ -4,6 +4,89 @@
     "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_views/lab_rest_views.csproj": {}
   },
   "projects": {
+    "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_api/Laboratorio_rest_api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_api/Laboratorio_rest_api.csproj",
+        "projectName": "Laboratorio_rest_api",
+        "projectPath": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_api/Laboratorio_rest_api.csproj",
+        "packagesPath": "/home/gustavoteixeira/.nuget/packages/",
+        "outputPath": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gustavoteixeira/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameWorkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameWorkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_views/lab_rest_views.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,7 +109,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_api/Laboratorio_rest_api.csproj": {
+                "projectPath": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/lab_rest_api/Laboratorio_rest_api.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
