@@ -1,0 +1,19 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <div class="container text-center">
+        @foreach (var item in Model.Items)
+        {
+            <div class="row">
+            @for(int i = 0; i < 4; i++)
+            {
+                <div class="col">
+
+                </div>
+            }         
+            </div>
+        }
+    </div>
