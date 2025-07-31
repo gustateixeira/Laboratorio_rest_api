@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Laboratorio_rest_api.props" />
-</Project>
