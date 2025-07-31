@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/Laboratorio_rest_api.csproj": {}
+    "C:\\Users\\Rafael_Vaccaro\\RiderProjects\\Laboratorio_rest_api\\lab_rest_api\\Laboratorio_rest_api.csproj": {}
   },
   "projects": {
-    "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/Laboratorio_rest_api.csproj": {
+    "C:\\Users\\Rafael_Vaccaro\\RiderProjects\\Laboratorio_rest_api\\lab_rest_api\\Laboratorio_rest_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/Laboratorio_rest_api.csproj",
+        "projectUniqueName": "C:\\Users\\Rafael_Vaccaro\\RiderProjects\\Laboratorio_rest_api\\lab_rest_api\\Laboratorio_rest_api.csproj",
         "projectName": "Laboratorio_rest_api",
-        "projectPath": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/Laboratorio_rest_api.csproj",
-        "packagesPath": "/home/gustavoteixeira/.nuget/packages/",
-        "outputPath": "/home/gustavoteixeira/Desktop/entity_project/Laboratorio_rest_api/obj/",
+        "projectPath": "C:\\Users\\Rafael_Vaccaro\\RiderProjects\\Laboratorio_rest_api\\lab_rest_api\\Laboratorio_rest_api.csproj",
+        "packagesPath": "C:\\Users\\Rafael_Vaccaro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rafael_Vaccaro\\RiderProjects\\Laboratorio_rest_api\\lab_rest_api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gustavoteixeira/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Rafael_Vaccaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +40,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -48,6 +49,20 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameWorkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameWorkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -69,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
