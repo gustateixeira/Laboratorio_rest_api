@@ -3,32 +3,80 @@
 @{  
     ViewData["Title"] = "Home page";
     var mock = new List<Autor>();
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 15; i++)
     {
         mock.Add(new Autor { PrimeiroNome = $"Autor {i + 1}", UltimoNome="Pereira",AutorId = i + 1 });
     }
+
+    int pageSize = 5; // Quantos itens por página
+
+    var pageNumber = Request.Query.ContainsKey("page")
+        ? int.Parse(Request.Query["page"])
+        : 1;
+    
+    int totalItems = mock.Count;
+    int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+    var paginatedItems = mock.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 }
+<div class="container">
+        <div class="row g-3">
+            <div class="col">
+                <input type="text" id="searchInput" placeholder="Pesquisar Autor" aria-label="Pesquisar Autor" class="form-control">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Pesquisar Livro" aria-label="Pesquisar Livro">
+            </div>
+        </div>
+        <table class="table table-dark table-striped table-hover table-bordered" style="justify-content: center;" id="myTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Autor</th>
+                    <th>Título</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @for(int i =0; i < paginatedItems.Count; i++)
+                {
+                    var item = paginatedItems[i];
+                    <tr style="cursor: pointer;">
+                        <th style="width:3rem;" scope="row">@((pageNumber - 1) * pageSize + i + 1)</th>
+                        <td>@(item.PrimeiroNome + " " + item.UltimoNome)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(pageNumber == 1 ? "disabled" : "")">
+                    <a class="page-link" href="?page=@(pageNumber - 1)">Anterior</a>
+                </li>
 
-<div class="text-center">
+                @for (int i = 1; i <= totalPages; i++)
+                {
+                    <li class="page-item @(pageNumber == i ? "active" : "")">
+                        <a class="page-link" href="?page=@i">@i</a>
+                    </li>
+                }
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>AutorId</th>
-                <th>Nome</th>
-            </tr>
-        </thead>
-        <tbody>
-        @foreach (var item in mock)
-        {
-            <tr scope="row">
-                <td>@(mock.IndexOf(item) + 1)</td>
-                <td>@item.AutorId</td>
-                <td>@item.PrimeiroNome @{+ " " +} @item.UltimoNome</td>
-
-            </tr>
-        }
-        </tbody>
-    </table>
+                <li class="page-item @(pageNumber == totalPages ? "disabled" : "")">
+                    <a class="page-link" href="?page=@(pageNumber + 1)">Próximo</a>
+                </li>
+            </ul>
+        </nav>
 </div>
+
+
+
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll("#myTable tbody tr");
+
+        rows.forEach(row => {
+            const nameCell = row.cells[1].textContent.toLowerCase();
+            row.style.display = nameCell.includes(filter) ? "" : "none";
+        });
+    });
+</script>
